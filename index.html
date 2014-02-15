@@ -2,97 +2,7 @@
 <head>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.min.css">
-<style>
-html {
-	font-family: 'Open Sans', sans-serif;
-	background-color: #eee;
-	margin: 0px;
-}
-#wrapper {
-	background-color: #fff;
-	padding: 5px;
-	width: 80%;
-	margin: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	min-height: 100%;
-	text-align: center;
-	-webkit-box-shadow: 0 0 1px 1px #e3e3e3;
-	-moz-box-shadow: 0 0 1px 1px #e3e3e3;
-	-ms-box-shadow: 0 0 1px 1px #e3e3e3;
-	-o-box-shadow: 0 0 1px 1px #e3e3e3;
-	box-shadow: 0 0 1px 1px #e3e3e3;
-}
-#searchBlock {
-	width: 80%;
-	margin-top: 0px;
-	padding: 0px;
-	background-color: #fff;
-}
-body {
-	margin: 0px;
-}
-h1{
-	font-size: 3em;
-	color: rgba(81, 203, 238, 1);
-	font-weight: normal;
-}
-#weee {
-	font-size: 3em;
-	color: rgba(81, 203, 238, 1);
-	font-weight: normal;
-}
-h2 {
-	font-size: 1.5em;
-	font-weight: normal;
-}
-#header {
-	margin: 10px;
-}
-#search {
-	padding: 7px;
-	font-size: 1em;
-    margin: 5px 1px 3px 0px;
-	-webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-	border-radius: 2px;
-    border: 1px solid #DDDDDD;
-	font-family: 'Open Sans', sans-serif;
-	width: 70%;
-}
-#btnSearch {
-	width: 100px;
-	font-size: 1em;
-	margin: 10px;
-}
-input:focus {
-	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    border: 1px solid rgba(81, 203, 238, 1);
-}
-button {
-	font-family: 'Open Sans', sans-serif;
-	padding: 7px;
-	background-color: rgba(81, 203, 238, 1);
-	outline: none;
-	color: #fff;
-	border: solid 1px rgba(81, 203, 238, 1);
-	border-radius: 2px;
-}
-button:focus, button:hover {
-	padding: 7px;
-	background-color: rgba(41, 163, 200, 1);
-	outline: none;
-	border-radius: 2px;
-}
-#results {
-	width: inherit;
-	display: none;
-	position: absolute;
-}
-#information {
-	overflow-y: auto;
-}
-</style>
+<link rel="stylesheet" href="css/style.css"></style>
 </head>
 <title>eajirojwoirae</title>
 <body>
@@ -112,42 +22,6 @@ button:focus, button:hover {
 		</div>
 	</div>
 </body>
-<script src="jquery-2.0.3.min.js"></script>
-<script>
-$(document).ready(function() {
-	var searched = false;
-	var height = $(document).height()-300;
-	$('#information').css({height: $(document).height()-10-$('#searchBlock').height()});
-	$('#searchBlock').css({position: 'absolute', top: height/2.0 + 'px'});
-    $('#searchBlock').hide().fadeIn(1000);
-	$('#search').focus();
-	$('#search').keypress(function(e){
-		if(e.keyCode==13) {
-			var ua = window.navigator.userAgent
-			var msie = ua.indexOf ( "MSIE " )
-			if ( msie <= 0 ) {
-				$('#btnSearch').click();
-			}
-		}
-    });
-	$('#search').focus( function() {
-		$('#search').val('');
-	});
-	$('#btnSearch').click( function() {
-		var search = $('#search').val();
-		$('#search').blur();
-		console.log(search);
-		if (!searched) {
-			$('#weee').animate({'font-size': 1.5 + 'em'},1000);
-			$('#searchBlock').animate({'top': 0 + 'px'}, 1000, function(){
-				$('#results').css({'top': $('#searchBlock').height() + 'px'}).fadeIn(500);
-			});
-			searched = true;
-			$('#searchBlock').css({position: 'fixed'});
-		}
-		$('#information').empty();
-		$('#information').append('<h1>WHats UP DAWg ' + search + '</h1>');
-	});
-});
-</script>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/script.js"></script>
 </html>
