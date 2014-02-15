@@ -1,18 +1,22 @@
 <html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.min.css">
 <style>
 html {
-	font-family: Century Gothic;
+	font-family: 'Open Sans', sans-serif;
 	background-color: #eee;
 	margin: 0px;
 }
 #wrapper {
 	background-color: #fff;
+	padding: 5px;
 	width: 80%;
 	margin: auto;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	min-height: 100%;
 	text-align: center;
-	height: 100%;
 	-webkit-box-shadow: 0 0 1px 1px #e3e3e3;
 	-moz-box-shadow: 0 0 1px 1px #e3e3e3;
 	-ms-box-shadow: 0 0 1px 1px #e3e3e3;
@@ -21,11 +25,19 @@ html {
 }
 #searchBlock {
 	width: 80%;
+	margin-top: 0px;
+	padding: 0px;
+	background-color: #fff;
 }
 body {
 	margin: 0px;
 }
-h1 {
+h1{
+	font-size: 3em;
+	color: rgba(81, 203, 238, 1);
+	font-weight: normal;
+}
+#weee {
 	font-size: 3em;
 	color: rgba(81, 203, 238, 1);
 	font-weight: normal;
@@ -39,16 +51,18 @@ h2 {
 }
 #search {
 	padding: 7px;
+	font-size: 1em;
     margin: 5px 1px 3px 0px;
 	-webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
 	border-radius: 2px;
     border: 1px solid #DDDDDD;
-	font-family: Century Gothic;
+	font-family: 'Open Sans', sans-serif;
 	width: 70%;
 }
 #btnSearch {
-	width: 10%;
+	width: 100px;
+	font-size: 1em;
 	margin: 10px;
 }
 input:focus {
@@ -56,7 +70,7 @@ input:focus {
     border: 1px solid rgba(81, 203, 238, 1);
 }
 button {
-	font-family: Century Gothic;
+	font-family: 'Open Sans', sans-serif;
 	padding: 7px;
 	background-color: rgba(81, 203, 238, 1);
 	outline: none;
@@ -64,34 +78,76 @@ button {
 	border: solid 1px rgba(81, 203, 238, 1);
 	border-radius: 2px;
 }
-button:focus {
-	font-family: Century Gothic;
+button:focus, button:hover {
 	padding: 7px;
 	background-color: rgba(41, 163, 200, 1);
 	outline: none;
-	border: solid 1px teal;
 	border-radius: 2px;
 }
+#results {
+	width: inherit;
+	display: none;
+	position: absolute;
+}
+#information {
+	overflow-y: auto;
+}
 </style>
+</head>
 <title>eajirojwoirae</title>
 <body>
 	<div id="wrapper">
 		<div id="searchBlock">
-			<h1>eajriowjeoirjwaeoi</h1>
-			<input id="search"></input><button id="btnSearch">search</button>
+			<p><span id="weee">eajriowjeoirjwaeoi</span></p>
+			<input id="search"></input><button id="btnSearch"><i class='fa fa-search'></i> search</button>
 		</div>
-		<div id="footer" style="text-align: center; width: inherit; font-size:0.5em; float: bottom; position: absolute; bottom: 0;">
+		<div id="results">
+			<div id="information">
+				<h1>WHats UP DAWg</h1>
+			</div>
+		</div>
+		<div>
+		<div id="footer" style="text-align: center; width: 80%; font-size:0.5em; float: bottom; position: absolute; bottom: 0;">
 			Created by Kevin Lei, Benson Chen, and Jodie Chen for PennApps Spring 2014
 		</div>
 	</div>
 </body>
 <script src="jquery-2.0.3.min.js"></script>
 <script>
-  $(document).ready(function() {
-  	var height = $(document).height()-300;
+$(document).ready(function() {
+	var searched = false;
+	var height = $(document).height()-300;
+	$('#information').css({height: $(document).height()-10-$('#searchBlock').height()});
 	$('#searchBlock').css({position: 'absolute', top: height/2.0 + 'px'});
     $('#searchBlock').hide().fadeIn(1000);
 	$('#search').focus();
-  });
+	$('#search').keypress(function(e){
+		if(e.keyCode==13) {
+			var ua = window.navigator.userAgent
+			var msie = ua.indexOf ( "MSIE " )
+			if ( msie <= 0 ) {
+				$('#btnSearch').click();
+			}
+		}
+    });
+	$('#search').focus( function() {
+		$('#search').val('');
+	});
+	$('#btnSearch').click( function() {
+		var search = $('#search').val();
+		$('#search').blur();
+		console.log(search);
+		if (!searched) {
+			$('#weee').animate({'font-size': 1.5 + 'em'},1000);
+			$('#searchBlock').animate({'top': 0 + 'px'}, 1000, function(){
+				$('#results').css({'top': $('#searchBlock').height() + 'px'}).fadeIn(500);
+			});
+			searched = true;
+			$('#searchBlock').css({position: 'fixed'});
+		}
+		$('#information').empty();
+		$('#information').append('<h1>WHats UP DAWg ' + search + '</h1>');
+	});
+});
 </script>
 </html>
