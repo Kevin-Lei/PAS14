@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	var searched = false;
 	var height = $(document).height()-300;
-	$('#information').css({height: $(document).height()-10-$('#searchBlock').height()});
+	$('#information').css({height: $(document).height()-150-$('#searchBlock').height()});
 	$('#searchBlock').css({position: 'absolute', top: height/2.0 + 'px'});
     $('#searchBlock').hide().fadeIn(1000);
 	$('#search').focus();
@@ -23,8 +23,8 @@ $(document).ready(function() {
 		console.log(search);
 		if (!searched) {
 			$('#weee').animate({'font-size': 1.5 + 'em'},1000);
-			$('#searchBlock').animate({'top': 0 + 'px'}, 1000, function(){
-				$('#results').css({'top': $('#searchBlock').height() + 'px'}).fadeIn(200);
+			$('#searchBlock').animate({'top': 50 + 'px'}, 1000, function(){
+				$('#results').css({'top': $('#searchBlock').height() + 10 + 'px'}).fadeIn(200);
 			});
 			searched = true;
 			$('#searchBlock').css({position: 'fixed'});

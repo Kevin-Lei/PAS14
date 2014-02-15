@@ -1,17 +1,17 @@
 html {
 	font-family: 'Open Sans', sans-serif;
-	background-color: #eee;
+	background-color: rgba(81, 203, 238, 1);
 	margin: 0px;
+	z-index: -1;
 }
 #wrapper {
 	background-color: #fff;
 	padding: 5px;
 	width: 80%;
 	margin: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	min-height: 100%;
+	min-height: 96%;
 	text-align: center;
+	z-index: 1;
 	-webkit-box-shadow: 0 0 1px 1px #e3e3e3;
 	-moz-box-shadow: 0 0 1px 1px #e3e3e3;
 	-ms-box-shadow: 0 0 1px 1px #e3e3e3;
@@ -23,9 +23,14 @@ html {
 	margin-top: 0px;
 	padding: 0px;
 	background-color: #fff;
+	z-index: 2;
 }
 body {
 	margin: 0px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background: url('../img/pattern-sm-white.png');
+	z-index: 0;
 }
 h1{
 	font-size: 3em;
@@ -43,6 +48,15 @@ h2 {
 }
 #header {
 	margin: 10px;
+}
+#footer {
+	text-align: center;
+	width: 80%;
+	color: #fff;
+	font-size:0.5em;
+	float: bottom;
+	position: absolute;
+	bottom: 0;
 }
 #search {
 	padding: 7px;
