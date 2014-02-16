@@ -5,7 +5,6 @@
 
 // Load the application once the DOM is ready, using `jQuery.ready`:
 $(function(){
-
   // group Model
   // ----------
 
@@ -51,7 +50,6 @@ $(function(){
 
   // The DOM element for a group item...
   var groupView = Backbone.View.extend({
-
     //... is a list tag.
     tagName:  "li",
 
@@ -83,6 +81,8 @@ $(function(){
         $('#main1').hide();
         $('#header1').show();
       }
+	  console.log(groups['models'][0].get("title"));
+	  padHerder(groups['models'][0].get("title"));
       return this;
     },
     // Switch this view into `"editing"` mode, displaying the input field.
@@ -97,6 +97,7 @@ $(function(){
       if (!value) {
       } else {
         this.model.save({title: value});
+		padHerder(this.input.val().toUpperCase()); //TODO: prevent invalid inputs
         this.$el.removeClass("editing");
       }
     },
@@ -163,7 +164,6 @@ $(function(){
     createOnEnter: function(e) {
       if (e.keyCode != 13) return;
       if (!this.input.val()) return;
-	  groups.empty();
       groups.create({title: this.input.val().toUpperCase()});
       this.input.val('');
     },
@@ -174,27 +174,20 @@ $(function(){
   var App = new AppView;
 
 });
-
-function createCORSRequest(method, url) {
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr) {
-
-    // Check if the XMLHttpRequest object has a "withCredentials" property.
-    // "withCredentials" only exists on XMLHTTPRequest2 objects.
-    xhr.open(method, url, true);
-
-    } else if (typeof XDomainRequest != "undefined") {
-
-    // Otherwise, check if XDomainRequest.
-    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-
-    } else {
-
-    // Otherwise, CORS is not supported by the browser.
-    xhr = null;
-
-  }
-  return xhr;
+function padHerder(value) {
+    setTimeout(padHerder,1000000);
+	var query = "https://www.padherder.com/api/events/";
+	console.log(query)
+	getData(query, value);
+}
+function getData(query, value) {
+	$.getJSON(query).done(function(parsed_json) {
+		$("#events").empty('');
+		for (var x=0; x< parsed_json.length; x++) {
+			if (parsed_json[x]["group_name"]==value) {
+				$("#events").append(parsed_json[x]["title"] + '</br>');
+				$("#events").append(parsed_json[x]["starts_at"] + '</br>')
+			}
+		}
+	console.log(parsed_json);});
 }
