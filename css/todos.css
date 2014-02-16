@@ -1,0 +1,121 @@
+#todoapp input[type="text"], #new-todo {
+	padding: 3px;
+	margin-bottom: 5px;
+	font-size: 0.8em;
+	background: none;
+	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	border: none;
+	border-bottom: 1px solid #fff;
+}
+#todoapp h1 {
+	font-size: 1em;
+	font-family: 'Lato';
+}
+#new-todo {
+	border-radius: 2px;
+    border: 1px solid #fff;
+}
+input:focus {
+	outline: none;
+}
+#todoapp input::-webkit-input-placeholder {
+	font-style: italic;
+	color: #fff;
+}
+#todoapp {
+	background: rgba(0,0,0,0.5);
+	width: 200px;
+	height: 210px;
+	padding: 10px;
+	padding-left: 20px;
+	position: absolute;
+	bottom: 56px;
+	right: 20px;
+}
+#todo {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background: rgba(0,0,0,0.5);
+	padding: 10px;
+}
+#main {
+	display: none;
+	font-size: 0.8em;
+}
+#todo-list {
+	margin: 10px 0;
+	padding: 0;
+	list-style: none;
+	overflow-y: auto;
+	height: 130px;
+}
+input[type="checkbox"] {
+    background: none;
+	outline: none;
+    border: 2px solid #fff;
+}
+#todo-list li {
+	position: relative;
+	font-size: 1em;
+}
+#todo-list li.done label {
+	color: #777777;
+	text-decoration: line-through;
+}
+#todo-list .destroy {
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	display: none;
+	cursor: pointer;
+}
+
+#todo-list li:hover .destroy {
+  	display: block;
+}
+
+#todo-list .destroy:hover {
+  	background-position: 0 -20px;
+}
+#todo-list li.editing:last-child {
+	margin-bottom: -1px;
+}
+#todo-list li.editing .edit {
+	display: block;
+	margin: 0px;
+	font-size: 1em;
+}
+
+#todo-list li.editing .view {
+	display: none;
+}
+
+#todo-list li .view label {
+	word-break: break-word;
+}
+
+#todo-list li .edit {
+	display: none;
+}
+#todoapp footer {
+	display: none;
+	overflow: hidden;
+	color: #555555;
+	font-size: 0.8em;
+}
+#clear-completed {
+	float: right;
+	line-height: 20px;
+	text-decoration: none;
+	color: #555555;
+	padding: 0 10px 1px;
+	cursor: pointer;
+}
+#todo-count {
+	float: left;
+	display: inline-block;
+}

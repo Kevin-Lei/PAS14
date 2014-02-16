@@ -1,0 +1,117 @@
+#groupapp input[type="text"], #new-group {
+	font-size: 0.8em;
+	background: none;
+	-webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+	border: none;
+	border-bottom: 1px solid #fff;
+}
+#groupapp h1 {
+	font-size: 1em;
+	font-family: 'Lato';
+}
+#new-group {
+	border-radius: 2px;
+    border: 1px solid #fff;
+}
+input:focus {
+	outline: none;
+}
+#groupapp input::-webkit-input-placeholder {
+	font-style: italic;
+	color: #fff;
+}
+#groupapp input[type="checkbox"] {
+	display: none;
+}
+#groupapp {
+	padding: 10px;
+	padding-left: 20px;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+#group {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	background: rgba(0,0,0,0.5);
+	padding: 10px;
+}
+#main1 {
+	display: none;
+	font-size: 0.8em;
+}
+#group-list {
+	margin: 10px 0;
+	padding: 0;
+	list-style: none;
+}
+input[type="checkbox"] {
+    background: none;
+	outline: none;
+    border: 2px solid #fff;
+}
+#group-list li {
+	position: relative;
+	font-size: 1em;
+}
+#group-list li.done label {
+	color: #777777;
+	text-decoration: line-through;
+}
+#group-list .destroy {
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	display: none;
+	cursor: pointer;
+}
+
+#group-list li:hover .destroy {
+  	display: block;
+}
+
+#group-list .destroy:hover {
+  	background-position: 0 -20px;
+}
+#group-list li.editing:last-child {
+	margin-bottom: -1px;
+}
+#group-list li.editing .edit {
+	display: block;
+	margin: 0px;
+	font-size: 1em;
+}
+
+#group-list li.editing .view {
+	display: none;
+}
+
+#group-list li .view label {
+	word-break: break-word;
+}
+
+#group-list li .edit {
+	display: none;
+}
+#groupapp footer {
+	display: none;
+	overflow: hidden;
+	color: #555555;
+	font-size: 0.8em;
+}
+#clear-completed {
+	float: right;
+	line-height: 20px;
+	text-decoration: none;
+	color: #555555;
+	padding: 0 10px 1px;
+	cursor: pointer;
+}
+#group-count {
+	float: left;
+	display: inline-block;
+}

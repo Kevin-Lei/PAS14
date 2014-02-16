@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>New Tab</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/todos.css"/>
+		<link rel="stylesheet" href="css/group.css"/>
+    </head>
+    <body class="no_highlight">
+	
+		<ul id="links" class="no_highlight">
+			<li><a href="" id="app-return">APPS</a></li>
+			<li><a href="https://www.facebook.com/groups/PADGlobal/">FACEBOOK</a></li>
+			<li><a href="http://www.puzzleanddragonsforum.com/">FORUM</a></li>
+			<li><a href="http://www.padherder.com/">PADHERDER</a></li>
+		</ul>
+		<div id="weather" class="right"></div>
+		<div id="wrapper">
+			<div id="searchBlock" class="no_highlight default_cursor">
+				<div id="time">
+					<span id="hours"></span>:<span id="min"></span>
+				</div>
+				<span id="message"></span>
+				<input id="search"></input>
+				<button id="btnSearch"><i class='fa fa-search'></i></button>
+			</div>
+		</div>
+		<div id="todoapp">
+			<header>
+			  <input id="new-todo" type="text" placeholder="what do you need to do?">
+			</header>
+
+			<section id="main">
+			  <input id="toggle-all" type="checkbox">
+			  <label for="toggle-all">MARK ALL AS COMPLETE</label>
+			  <ul id="todo-list"></ul>
+			</section>
+
+			<footer>
+			  <a id="clear-completed">Clear completed</a>
+			  <div id="todo-count"></div>
+			</footer>
+		</div>
+		<a href="" id="todo">TODO</a>
+		<div id="groupapp">
+			<div id="header1">
+			<input id="new-group" type="text" placeholder="what group are you in?">
+			</div>
+			<section id="main1">
+				<div id="events">
+				</div>
+				<ul id="group-list"></ul>
+			</section>
+		</div>
+  <!--<div id="credits">
+    Created by
+    <br />
+    <a href="http://jgn.me/">J&eacute;r&ocirc;me Gravel-Niquet</a>.
+    <br />Rewritten by: <a href="http://addyosmani.github.com/todomvc">TodoMVC</a>.
+  </div>-->
+        <!-- Libraries -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script src="js/backbone.localStorage-min.js"></script>
+        <script src="js/handlebars.js"></script>
+
+        <!-- App -->
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/weather.js"></script>
+		<script type="text/javascript" src="js/padherder.js"></script>
+		<script type="text/javascript" src="app/todos.js"></script>
+		<script type="text/javascript" src="app/group.js"></script>
+	</body>
+  <!-- Templates -->
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+      <label><%- title %></label>
+      <a class="destroy">x</a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+  <script type="text/template" id="item1-template">
+    <div class="view">
+      <label><b>Group <%- title %></b></label>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+  <script type="text/template" id="stats-template">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+</html>
