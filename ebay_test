@@ -1,0 +1,27 @@
+Python 2.7 (r27:82525, Jul  4 2010, 09:01:59) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> from ebaysdk import finding
+
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    from ebaysdk import finding
+ImportError: No module named ebaysdk
+>>> 
+from ebaysdk import finding
+
+Traceback (most recent call last):
+  File "<pyshell#1>", line 2, in <module>
+    from ebaysdk import finding
+ImportError: No module named ebaysdk
+>>> 
+>>> 
+
+>>> 
+>>> 
+>>> from ebaysdk import finding
+
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    from ebaysdk import finding
+ImportError: No module named ebaysdk
+>>> 
