@@ -1,0 +1,4 @@
+PyYaml
+requests
+grequests
+beautifulsoup4

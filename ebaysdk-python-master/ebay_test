@@ -1,0 +1,7 @@
+from ebaysdk import finding
+
+api = finding(appid='YOUR_APPID_HERE')
+
+api.execute('findItemsAdvanced', {'keywords': 'shoes'})
+
+print api.response_dict()

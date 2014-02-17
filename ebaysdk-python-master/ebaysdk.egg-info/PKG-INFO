@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: ebaysdk
+Version: 1.0.3
+Summary: eBay SDK for Python
+Home-page: https://github.com/timotheus/ebaysdk-python
+Author: Tim Keefer
+Author-email: tkeefer@gmail.com
+License: COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
+Description: This SDK is a programatic inteface into the eBay
+        APIs. It simplifies development and cuts development time by standerizing
+        calls, response processing, error handling, debugging across the Finding,
+        Shopping, Merchandising, & Trading APIs. 
+Platform: UNKNOWN
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Intended Audience :: Developers
+Provides: ebaysdk
