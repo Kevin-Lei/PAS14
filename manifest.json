@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+    "name": "PAD Launcher",
+    "description": "Puzzles & Dragons New Tab Page",
+	"version": "0.0.0.1",
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "permissions" : ["management",
+	"geolocation",
+	"https://api.wunderground.com/*",
+	"http://api.wunderground.com/*",
+	"http://api.wunderground.com/",
+	"http://api.wunderground.com/",
+	"https://www.padherder.com/api/events/",
+	"http://www.padherder.com/api/events/",
+	"http://www.padherder.com/*"
+	],
+    "chrome_url_overrides" : {
+        "newtab": "newtab.html"
+    },
+	"web_accessible_resources": [
+	"js/weather.js"]
+ }
